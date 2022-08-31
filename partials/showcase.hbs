@@ -14,7 +14,7 @@
                 <div class="column is-7">
                     <div class="carousel" id="carousel-home">
                         {{!-- get 10 posts with tag #carousel as --}}
-                        {{#get "posts" limit="6" include="tags,authors" filter="tags:[hash-carousel]" as |carousel|}} 
+                        {{#get "posts" limit="15" include="tags,authors" filter="tags:[hash-carousel]" as |carousel|}} 
                         {{#foreach carousel}}
                             <div class="carousel-item box img-bg has-shadow-lift can-scale" style="background-image: url({{img_url feature_image size="large"}});">
                                 <a href="{{url}}" rel="bookmark" class="link-block"></a>
@@ -82,5 +82,5 @@
         <div class="column is-hidden-touch"></div>
     </div>
     <br>
-    <div class="column is-12-tablet is-10-desktop is-10-widescreen is-8-fullhd" id="banner_random"></div>
+    <div class="column col is-12-tablet is-10-desktop is-10-widescreen is-8-fullhd" id="banner_random"></div>
 </section>
