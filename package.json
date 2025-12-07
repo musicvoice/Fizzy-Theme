@@ -33,6 +33,26 @@
             "wide": {
                 "width": 1200
             }
+        },
+        "custom": {
+            "title_font": {
+                "type": "select",
+                "options": [
+                    "Montserrat",
+                    "serif",
+                    "sans-serif"
+                ],
+                "default": "Montserrat"
+            },
+            "body_font": {
+                "type": "select",
+                "options": [
+                    "Georgia",
+                    "serif",
+                    "sans-serif"
+                ],
+                "default": "Georgia"
+            }
         }
     }
 }

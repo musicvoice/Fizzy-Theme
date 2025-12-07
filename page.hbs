@@ -6,34 +6,51 @@
         <div class="column is-hidden-touch is-1-desktop is-1-widescreen is-2-fullhd"></div>
         <div class="column is-12-tablet is-10-desktop is-10-widescreen is-8-fullhd">
             <article class="single-article">
-                <div class="box is-paddingless is-shadowless is-full-mobile is-centered is-clipped">
-
-                    {{!-- featured_image --}}
-                    {{#if feature_image}}
+                {{!-- featured_image --}}
+                {{#if feature_image}}
+                <div class="box is-paddingless is-shadowless is-full-mobile is-centered">
                     <section class="featured-image">
-                        <div class="featured-image" style="background-image:url({{img_url feature_image size="wide"}});"></div>
+                        <div class="featured-image" style="background-image:url({{img_url feature_image size="wide"}});">
+                            {{!-- featured page label --}}
+                            {{#if featured}}
+                            <span class="featured-label large is-montserrat" title="Featured Page"><i class="iconfont icon-star"></i> {{t "Featured"}}</span>
+                            {{/if}}
+                        </div>
                     </section>
-                    {{/if}}
-                    
+                {{else}}
+                <div class="box is-paddingless is-shadowless is-full-mobile is-centered">
+                <div class="spacing-25 is-hidden-mobile"></div>
+                {{/if}}
+
                     <section class="post-wrap is-vpadding-15">
-                        <div class="spacing-15 is-hidden-mobile"></div>
+                        {{!-- meta --}}
+                        <div class="has-2-ends is-montserrat is-uppercase is-size-7">
+                            <div class="end date">{{date format=(t "DD MMMM YYYY")}}</div>
+                            <div class="end reading_time">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</div>
+                        </div>
+
                         {{!-- title --}}
-                        <h1 class="title is-2 is-size-4-mobile is-montserrat">{{title}}</h1>
+                        <h1 class="title is-montserrat">{{title}}</h1>
 
                         {{!-- tags --}}
-                        {{#tag}}
+                        {{#has tag="count:>0"}}
                         <div class="buttons tags has-text-weight-semibold">
-                            <span class="button is-static is-size-7-mobile">
+                            <span class="button is-static is-size-7-mobile" style="padding:0 0.5em;min-width:2.5em">
                                 {{#has tag="count:1"}}<i class="iconfont icon-tag"></i>{{/has}}
-                                {{#has tag="count:>1"}}<i class="iconfont icon-tags"></i>{{/has}}</span>
+                                {{#has tag="count:>1"}}<i class="iconfont icon-tags"></i>{{/has}}
+                            </span>
                             {{#foreach tags}}
                             <a href="{{url}}" class="button is-light is-size-7-mobile has-text-weight-semibold">{{name}}</a>
                             {{/foreach}}
                         </div>
-                        {{/tag}}
+                        {{/has}}
 
                         {{!-- content --}}
                         <div class="content post-content is-size-6-mobile is-georgia">{{content}}</div>
+
+                        {{!-- author box --}}
+                        {{> "post/post_author"}}
+                        
                         <div class="spacing-1 is-hidden-mobile"></div>
                     </section>
                 </div>
