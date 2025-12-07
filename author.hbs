@@ -26,8 +26,8 @@ into the {body} of the default.hbs template --}}
         <ul class="meta-info is-size-6">
             <li class="has-text-weight-bold">{{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}</li>
             <li>|</li>
-            {{#if twitter}}<li><a href="{{twitter_url}}" class="has-text-white" target="_blank"><i class="iconfont icon-twitter"></i></a></li>{{/if}}
-            {{#if facebook}}<li><a href="{{facebook_url}}" class="has-text-white" target="_blank"><i class="iconfont icon-facebook"></i></a></li>{{/if}}
+            {{#if twitter}}<li><a href="{{social_url type="twitter"}}" class="has-text-white" target="_blank"><i class="iconfont icon-twitter"></i></a></li>{{/if}}
+            {{#if facebook}}<li><a href="{{social_url type="facebook"}}" class="has-text-white" target="_blank"><i class="iconfont icon-facebook"></i></a></li>{{/if}}
             {{#if website}}<li><a href="{{website}}" class="has-text-white" target="_blank"><i class="iconfont icon-link"></i></a></li>{{/if}}
             {{#if location}}<li><i class="iconfont icon-location"></i> {{location}}</li>{{/if}}
         </ul>

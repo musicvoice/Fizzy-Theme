@@ -21,7 +21,7 @@
                                 {{t "There are {total} posts in total" total=pagination.total}}
                             {{/get}}
                             <ul class="post-archive">
-                                {{#get "posts" limit="all" include="authors" order="published_at desc"}}
+                                {{#get "posts" limit="1000" include="authors" order="published_at desc"}}
                                     {{#foreach posts}}
                                     <li class='post-archive-item' year="{{date format=(t 'YYYY')}}" month="{{date format=(t 'MMMM')}}">
                                             <div class="date">
