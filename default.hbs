@@ -33,6 +33,22 @@
     {{!-- Prismjs: css--}}
     <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
 
+    {{!-- Custom theme settings for fonts --}}
+    <style>
+        :root {
+            --title-font: {{@custom.title_font}};
+            --body-font: {{@custom.body_font}};
+            --gh-font-heading: {{@custom.title_font}};
+            --gh-font-body: {{@custom.body_font}};
+        }
+        h1, h2, h3, h4, h5, h6, .is-montserrat {
+            font-family: var(--title-font), 'Montserrat', -apple-system, BlinkMacSystemFont, "PingFang SC", "Heiti SC", "STXihei", "Microsoft YaHei", sans-serif !important;
+        }
+        .is-georgia, .post-content {
+            font-family: var(--body-font), Georgia, -apple-system, BlinkMacSystemFont, 'Segoe UI', "PingFang SC", "Microsoft YaHei", "Heiti SC", "STXihei", sans-serif !important;
+        }
+    </style>
+
 </head>
 
 <body class="has-background-light-line">
