@@ -35,7 +35,7 @@
 
 </head>
 
-<body class="has-background-light-line title-font-{{slugify @custom.title_font}} body-font-{{slugify @custom.body_font}}">
+<body class="has-background-light-line{{#match @custom.title_font "serif"}} title-font-serif{{/match}}{{#match @custom.title_font "sans-serif"}} title-font-sans-serif{{/match}}{{#match @custom.body_font "serif"}} body-font-serif{{/match}}{{#match @custom.body_font "sans-serif"}} body-font-sans-serif{{/match}}">
 
     {{!-- header --}}
     {{> header}}
