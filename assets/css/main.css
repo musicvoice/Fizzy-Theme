@@ -213,9 +213,25 @@ strong{
     background-repeat: no-repeat;
 }
 /* ====================== fonts ====================== */
+body {
+	--fizzy-title-font: 'Montserrat';
+	--fizzy-body-font: Georgia;
+}
+body.title-font-serif {
+	--fizzy-title-font: serif;
+}
+body.title-font-sans-serif {
+	--fizzy-title-font: sans-serif;
+}
+body.body-font-serif {
+	--fizzy-body-font: serif;
+}
+body.body-font-sans-serif {
+	--fizzy-body-font: sans-serif;
+}
 h1, h2, h3, h4, h5, h6, .is-montserrat{
 	font-family:
-	'Montserrat',
+	var(--fizzy-title-font),
 	-apple-system,
 	BlinkMacSystemFont,
 	"PingFang SC",
@@ -226,7 +242,7 @@ h1, h2, h3, h4, h5, h6, .is-montserrat{
 }
 .is-georgia {
 	font-family: 
-	Georgia, 
+	var(--fizzy-body-font), 
 	-apple-system, 
 	BlinkMacSystemFont,
 	'Segoe UI',
