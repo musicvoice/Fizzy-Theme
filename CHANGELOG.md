@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v1.3.6
+- 🐛 moved footer code injection render to the end of `<body>` so injected banner scripts run after theme scripts
+- ✨ wired `@custom.title_font` and `@custom.body_font` into template/CSS font selection
+- ⬆️ updated Ghost engine requirement to `>=5.0.0`
+
 ## v1.3.5
 - ⬆️ Support Ghost V5
 ## v1.3.4

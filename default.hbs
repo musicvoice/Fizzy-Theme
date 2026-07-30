@@ -35,7 +35,7 @@
 
 </head>
 
-<body class="has-background-light-line">
+<body class="has-background-light-line title-font-{{slugify @custom.title_font}} body-font-{{slugify @custom.body_font}}">
 
     {{!-- header --}}
     {{> header}}
@@ -75,9 +75,6 @@
         })
     </script>
 
-    {{!-- This tag outputs Code injections in Site Footer--}}
-    {{ghost_foot}}
-
     {{!-- gallery popup --}}
     <script src="{{asset 'js/popup.min.js'}}"></script>
 
@@ -111,5 +108,8 @@
         if (typeof fizzy_credit == 'undefined') {var fizzy_credit = true;};
         if (fizzy_credit){$('#fizzy-credit').removeClass("is-hidden");};
     </script>
+
+    {{!-- This tag outputs Code injections in Site Footer--}}
+    {{ghost_foot}}
 </body>
 </html>
